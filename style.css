@@ -160,18 +160,6 @@ body {
     position: relative;
 }
 
-/* Specific styling for X logo */
-.social-links a .fa-x-twitter {
-    font-size: 1.4rem;
-    font-weight: bold;
-    transform: scale(1.1);
-}
-
-.contact-item .fa-x-twitter {
-    font-size: 1.4rem;
-    font-weight: bold;
-    transform: scale(1.1);
-}
 
 .social-links a:hover {
     color: var(--light-color);
@@ -374,27 +362,6 @@ body {
     animation: fadeIn 1s ease-out;
 }
 
-/* X (Twitter) logo image styling */
-.x-logo-icon {
-    width: 1.5em;
-    height: 1.5em;
-    object-fit: contain;
-    display: inline-block;
-    vertical-align: middle;
-    transition: transform 0.3s, box-shadow 0.3s;
-    margin-bottom: 0;
-    background: none;
-    border-radius: 0;
-    box-shadow: none;
-}
-.x-logo-icon:hover, .social-links a:hover .x-logo-icon {
-    transform: translateY(-3px) scale(1.1);
-    filter: brightness(1.2);
-}
-
-.contact-x-logo {
-    margin-right: 1rem;
-}
 
 /* Certificate Section Styles */
 .certificate-card {
