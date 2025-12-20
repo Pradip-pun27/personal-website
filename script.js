@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     }
     if (metaThemeColor) {
-      metaThemeColor.setAttribute('content', theme === 'dark' ? '#0b1220' : '#1e88e5');
+      metaThemeColor.setAttribute('content', theme === 'dark' ? '#0f172a' : '#1e40af');
     }
   }
 
@@ -36,13 +36,13 @@ document.addEventListener('DOMContentLoaded', () => {
   const navbar = document.querySelector('.navbar');
   const setNavbarState = () => {
     if (!navbar) return;
-    if (window.scrollY > 24) navbar.classList.add('scrolled');
+    if (window.scrollY > 20) navbar.classList.add('scrolled');
     else navbar.classList.remove('scrolled');
   };
   setNavbarState();
   window.addEventListener('scroll', setNavbarState);
 
-  // Smooth scroll ONLY for real section links (not dropdown toggles)
+  // Smooth scroll
   document.querySelectorAll('a[href^="#"]:not([data-bs-toggle])').forEach(anchor => {
     anchor.addEventListener('click', (e) => {
       const id = anchor.getAttribute('href');
@@ -62,12 +62,12 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Active link highlight based on scroll
+  // Active link highlight
   const sections = Array.from(document.querySelectorAll('section[id]'));
   const navLinks = document.querySelectorAll('.nav-link');
   const onScrollActive = () => {
     let currentId = '';
-    const offset = 220;
+    const offset = 150; // slightly adjusted for accuracy
     sections.forEach(sec => {
       if (window.scrollY + offset >= sec.offsetTop) currentId = sec.id;
     });
@@ -86,7 +86,7 @@ document.addEventListener('DOMContentLoaded', () => {
             io.unobserve(entry.target);
           }
         });
-      }, { threshold: 0.15 })
+      }, { threshold: 0.1 })
     : null;
   revealEls.forEach(el => { if (io) io.observe(el); else el.classList.add('in-view'); });
 
